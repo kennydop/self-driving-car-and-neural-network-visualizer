@@ -8,8 +8,16 @@
     <title>SDCNNV</title>
   </head>
   <body>
-    <canvas id="canvas"></canvas>
+    <canvas id="carCanvas"></canvas>
+    <div id="verticalButtons">
+      <button onclick="save()">💾</button>
+      <button onclick="discard()">🗑️</button>
+      <button onclick="reload()">🔄</button>
+    </div>
+    <canvas id="networkCanvas"></canvas>
     <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="visualizer.js"></script>
+    <script type="text/javascript" src="network.js"></script>
     <script type="text/javascript" src="sensor.js"></script>
     <script type="text/javascript" src="controls.js"></script>
     <script type="text/javascript" src="road.js"></script>

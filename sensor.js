@@ -8,17 +8,17 @@ class Sensor {
     this.readings = [];
   }
 
-  update(roadBoarders, traffic) {
+  update(roadBorders, traffic) {
     this.#castRays();
     this.readings = [];
     for (let ray of this.rays) {
-      this.readings.push(this.#getReading(ray, roadBoarders, traffic));
+      this.readings.push(this.#getReading(ray, roadBorders, traffic));
     }
   }
 
-  #getReading(ray, roadBoarders) {
+  #getReading(ray, roadBorders) {
     const touches = [];
-    for (let boarder of roadBoarders) {
+    for (let boarder of roadBorders) {
       const touch = getIntersection(ray[0], ray[1], boarder[0], boarder[1]);
       if (touch) {
         touches.push(touch);
