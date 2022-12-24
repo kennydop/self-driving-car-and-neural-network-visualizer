@@ -7,21 +7,38 @@
     <link rel="stylesheet" href="style.css" />
     <title>SDCNNV</title>
   </head>
-  <body>
-    <canvas id="carCanvas"></canvas>
-    <div id="verticalButtons">
-      <button onclick="save()">💾</button>
-      <button onclick="discard()">🗑️</button>
-      <button onclick="reload()">🔄</button>
-    </div>
-    <canvas id="networkCanvas"></canvas>
+  <body id="ibody">
+    <form id="tform" action="/train.html">
+      <label for="cars">
+        Number of Cars: <br />
+        <input type="range" name="cars" id="cars" value="11" />
+        <span>___</span>
+      </label>
+      <!-- <label for="traffic">
+        Traffic:<br />
+        <input type="range" name="traffic" id="traffic" value="10"/>
+        <span>___</span>
+      </label> -->
+      <input type="submit" value="Train" />
+    </form>
     <script type="text/javascript" src="utils.js"></script>
-    <script type="text/javascript" src="visualizer.js"></script>
-    <script type="text/javascript" src="network.js"></script>
-    <script type="text/javascript" src="sensor.js"></script>
-    <script type="text/javascript" src="controls.js"></script>
-    <script type="text/javascript" src="road.js"></script>
-    <script type="text/javascript" src="car.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript">
+      const form = document.getElementById("tform");
+      const cars = document.getElementById("cars");
+      // const traffic = document.getElementById("traffic");
+      const carsSpan = document.querySelector("#cars + span");
+      // const trafficSpan = document.querySelector("#traffic + span");
+      carsSpan.textContent = getVal(cars.value);
+      // trafficSpan.textContent = getVal(traffic.value, 20, 100);
+      cars.oninput = () => {
+        carsSpan.textContent = getVal(cars.value);
+      };
+      // traffic.oninput = () => {
+      //   trafficSpan.textContent = getVal(traffic.value, 20, 100);
+      // };
+      function getVal(range, start = 50, end = 1000) {
+        return Math.round(lerp(start, end, range / 100));
+      }
+    </script>
   </body>
 </html>

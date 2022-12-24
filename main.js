@@ -7,7 +7,10 @@ const networkCtx = networkCanvas.getContext("2d");
 
 const road = new Road(carCanvas.width / 2, carCanvas.width * 0.9);
 
-const N = 100;
+const N = Math.round(
+  lerp(50, 1000, parseInt(window.location.search.split("=")[1] || "1") / 100)
+);
+console.log(N, N, N);
 const cars = generateCars(N);
 let bestCar = cars[0];
 
@@ -31,7 +34,10 @@ const traffic = [
   new Car(road.getLaneCenter(0), -300, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(2), -300, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(0), -500, 30, 50, "DUMMY", 2),
-  new Car(road.getLaneCenter(1), -500, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -500, 30, 80, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -5000, 30, 80, "DUMMY", 2),
+  new Car(road.getLaneCenter(0), -7500, 30, 80, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -15000, 35, 80, "DUMMY", 2),
   new Car(road.getLaneCenter(1), -700, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(2), -700, 30, 50, "DUMMY", 2),
 ];

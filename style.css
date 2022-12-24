@@ -1,4 +1,4 @@
-body {
+#tbody {
   background: #2c2c2c;
   margin: 0;
   overflow: hidden;
@@ -9,7 +9,7 @@ body {
 #verticalButtons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3rem;
 }
 button {
   border: none;
@@ -17,10 +17,66 @@ button {
   padding: 5px 5px 7px 5px;
   margin: 2px;
   cursor: pointer;
+  background-color: #d9dbde;
+  box-shadow: 0 3px 0 #989898;
+  /* transition: transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  -moz-transition: transform 0.1s ease-out;
+  -ms-transition: transform 0.1s ease-out;
+  -o-transition: transform 0.1s ease-out; */
 }
 button:hover {
   background: #ffffff;
 }
+button:active {
+  box-shadow: none;
+  background: #ffffff;
+  transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -o-transform: translateY(3px);
+}
 #carCanvas {
   background: #616163;
+}
+#ibody {
+  background: #2c2c2c;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+#tform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #d9dbde;
+}
+#tform input[type="submit"] {
+  border: none;
+  border-radius: 5px;
+  padding: 7px 18px 7px 18px;
+  margin: 2px;
+  cursor: pointer;
+  background-color: #d9dbde;
+  box-shadow: 0 5px 0 #989898;
+  width: fit-content;
+}
+#tform input[type="submit"]:hover {
+  background: #ffffff;
+}
+#tform input[type="submit"]:active {
+  box-shadow: none;
+  background: #ffffff;
+  transform: translateY(5px);
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+  -o-transform: translateY(5px);
 }
